@@ -60,7 +60,7 @@ public class Catalogue implements Saveable {
      * @return a string representation of all book listings
      */
     public String getListings() {
-        String listings = ""; // Initializes an empty string for listings
+        String listings = ""; // Initializes empty string for listings
         // Iterates through each book in the catalogue
         for (int i = 0; i < getNumberOfBooksInCatalogue(); i++) {
             // Appends book details to the listings string
