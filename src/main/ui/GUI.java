@@ -163,6 +163,7 @@ public class GUI extends JFrame implements ActionListener {
 
         if (ae.getActionCommand().equals("View listings")) {
             initializeBookListingsPanel();
+            loadBookListings();
         } else if (ae.getActionCommand().equals("List your book")) {
             initializeListingsPanel();
         } else if (ae.getActionCommand().equals("Save listings file")) {
