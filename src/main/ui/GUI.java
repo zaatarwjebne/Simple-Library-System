@@ -28,7 +28,6 @@ public class GUI extends JFrame implements ActionListener {
 
     private JPanel bookListingsPanel;
     private JLabel listings;
-
     private JPanel listingsPage;
     private JButton addBook;
     private JTextField t1;
@@ -83,7 +82,7 @@ public class GUI extends JFrame implements ActionListener {
     // EFFECTS: Makes the main menu panel and changes the background color
     public void initializeMenu() {
         mainMenu = new JPanel();
-        mainMenu.setBackground(Color.decode("#FFC5C5"));
+        mainMenu.setBackground(Color.decode("#00F350"));
         add(mainMenu);
         listings = new JLabel();
         listings.setText("The Shelves are Bare...");
@@ -140,8 +139,8 @@ public class GUI extends JFrame implements ActionListener {
 
     // EFFECTS: Creates the image on the main menu and its it to the panel
     public void addImageToLabel(JLabel j1) {
-        j1.setIcon(new ImageIcon("./data/ship.png"));
-        j1.setMinimumSize(new Dimension(20,20));
+        j1.setIcon(new ImageIcon("./src/main/ui/data/image.jpg"));
+        j1.setPreferredSize(new Dimension(500, 300));
         mainMenu.add(j1);
     }
 
@@ -260,6 +259,8 @@ public class GUI extends JFrame implements ActionListener {
         inputPanel.add(author);
         inputPanel.add(t2);
         listingsPage.add(inputPanel, BorderLayout.CENTER);
+        JScrollPane scroll = new JScrollPane(listings, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         JPanel actionPanel = new JPanel();
         actionPanel.add(searchButton);
@@ -267,6 +268,7 @@ public class GUI extends JFrame implements ActionListener {
         actionPanel.add(borrowBookButton);
         actionPanel.add(returnBookButton);
         listingsPage.add(actionPanel, BorderLayout.SOUTH);
+        listingsPage.add(scroll,BorderLayout.EAST);
     }
 
     // EFFECTS: Changes certain attributes of the labels and text fields
